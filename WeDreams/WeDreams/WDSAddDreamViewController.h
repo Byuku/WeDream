@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WDSDream.h"
 
 @interface WDSAddDreamViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 
@@ -15,5 +16,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+
+@property (strong, nonatomic) id detailItem;
+
+@property (nonatomic,assign) WDSStatus status;
 
 @end

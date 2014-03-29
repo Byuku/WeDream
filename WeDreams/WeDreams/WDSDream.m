@@ -10,8 +10,7 @@
 
 @implementation WDSDream
 
-
-- (id)initWithParams:(NSString *)title :(NSString *)description :(NSString *)author
+- (id)initWithParams:(NSString *)title :(NSString *)description :(WDSStatus)status
 {
     
     self = [super init];
@@ -20,7 +19,7 @@
     {
         self.title = title;
         self.description = description;
-        self.author = author;
+        self.status = status;
     }
     
     return self;

@@ -16,6 +16,7 @@
 		EE1E253B18E6C08700F710CC /* WDSFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E253A18E6C08700F710CC /* WDSFriend.m */; };
 		EE1E253E18E6C16C00F710CC /* WDSDream.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E253D18E6C16C00F710CC /* WDSDream.m */; };
 		EE1E254118E6E57300F710CC /* WDSAddDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E254018E6E57300F710CC /* WDSAddDreamViewController.m */; };
+		EE1E254418E72C7900F710CC /* WDSShareDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1E254318E72C7900F710CC /* WDSShareDreamViewController.m */; };
 		EEE78ACF18E6A71700B055A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE78ACE18E6A71700B055A3 /* Foundation.framework */; };
 		EEE78AD118E6A71700B055A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE78AD018E6A71700B055A3 /* CoreGraphics.framework */; };
 		EEE78AD318E6A71700B055A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE78AD218E6A71700B055A3 /* UIKit.framework */; };
@@ -64,6 +65,8 @@
 		EE1E253D18E6C16C00F710CC /* WDSDream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSDream.m; sourceTree = "<group>"; };
 		EE1E253F18E6E57300F710CC /* WDSAddDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSAddDreamViewController.h; sourceTree = "<group>"; };
 		EE1E254018E6E57300F710CC /* WDSAddDreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSAddDreamViewController.m; sourceTree = "<group>"; };
+		EE1E254218E72C7900F710CC /* WDSShareDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSShareDreamViewController.h; sourceTree = "<group>"; };
+		EE1E254318E72C7900F710CC /* WDSShareDreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSShareDreamViewController.m; sourceTree = "<group>"; };
 		EEE78ACB18E6A71700B055A3 /* WeDreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeDreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEE78ACE18E6A71700B055A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EEE78AD018E6A71700B055A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,6 +233,8 @@
 				EE1E253718E6BDFD00F710CC /* WDSCollectionViewController.m */,
 				EE1E253F18E6E57300F710CC /* WDSAddDreamViewController.h */,
 				EE1E254018E6E57300F710CC /* WDSAddDreamViewController.m */,
+				EE1E254218E72C7900F710CC /* WDSShareDreamViewController.h */,
+				EE1E254318E72C7900F710CC /* WDSShareDreamViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 				EE1E252F18E6B8F800F710CC /* WDSHelperIndexedList.m in Sources */,
 				EE1E254118E6E57300F710CC /* WDSAddDreamViewController.m in Sources */,
 				EE1E253818E6BDFD00F710CC /* WDSCollectionViewController.m in Sources */,
+				EE1E254418E72C7900F710CC /* WDSShareDreamViewController.m in Sources */,
 				EE1E253218E6B97400F710CC /* WDSSidePanelController.m in Sources */,
 				EE1E252C18E6B8D600F710CC /* UIViewController+JASidePanel.m in Sources */,
 				EEE78ADB18E6A71700B055A3 /* main.m in Sources */,

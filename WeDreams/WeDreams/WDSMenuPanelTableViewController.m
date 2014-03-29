@@ -10,7 +10,7 @@
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 
-
+#import "WDSCollectionViewController.h"
 
 @interface WDSMenuPanelTableViewController ()
 {
@@ -20,6 +20,11 @@
 @end
 
 @implementation WDSMenuPanelTableViewController
+
+static NSString *all = @"All dreams";
+static NSString *inprogress = @"In progress dreams";
+static NSString *realized = @"Realized dreams";
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,7 +39,11 @@
 {
     [super viewDidLoad];
     
+<<<<<<< HEAD
     _objects = [[NSArray alloc] initWithObjects:@"All dreams", @"Current dreams", @"Completed dreams", nil];
+=======
+    _objects = [[NSArray alloc] initWithObjects:all, inprogress, realized, nil];
+>>>>>>> flav
     
     // under status bar
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
@@ -74,16 +83,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    NSLog(@"%@",_objects[indexPath.row]);
+   // NSLog(@"%@",_objects[indexPath.row]);
 
     if (indexPath.row == 0)
     {
-        self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
+        UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+        WDSCollectionViewController * cv = nav.viewControllers[0];
+        cv.status = WDSStatusAll;
+        self.sidePanelController.centerPanel = nav;
         
     }
     else if (indexPath.row == 1)
     {
         
+<<<<<<< HEAD
         self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"friendsViewController"];
         
     }
@@ -92,6 +105,21 @@
         
         self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"friendsViewController"];
         
+=======
+        UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+        WDSCollectionViewController * cv = nav.viewControllers[0];
+        cv.status = WDSStatusCurrent;
+        self.sidePanelController.centerPanel = nav;
+        
+    }
+   else
+    {
+        
+        UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+        WDSCollectionViewController * cv = nav.viewControllers[0];
+        cv.status = WDSStatusFinished;
+        self.sidePanelController.centerPanel = nav;
+>>>>>>> flav
     }
 
     [[self sidePanelController] toggleLeftPanel:nil];

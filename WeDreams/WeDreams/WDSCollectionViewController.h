@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "WDSDream.h"
+
 @interface WDSCollectionViewController : UICollectionViewController
+
+@property (nonatomic,assign) WDSStatus status;
 
 @end

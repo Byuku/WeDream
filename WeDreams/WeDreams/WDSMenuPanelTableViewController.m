@@ -10,7 +10,7 @@
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 
-
+#import "WDSCollectionViewController.h"
 
 @interface WDSMenuPanelTableViewController ()
 {
@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     
-    _objects = [[NSArray alloc] initWithObjects:@"My dreams", @"Friends dreams", nil];
+    _objects = [[NSArray alloc] initWithObjects:@"Current dreams", @"Finished dreams", nil];
     
     // under status bar
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
@@ -78,14 +78,20 @@
 
     if (indexPath.row == 0)
     {
-        self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
+
+        UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+        WDSCollectionViewController * cv = nav.viewControllers[0];
+        cv.status = WDSStatusCurrent;
+        self.sidePanelController.centerPanel = nav;
         
     }
    else if (indexPath.row == 1)
     {
         
-        self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"friendsViewController"];
-
+        UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+        WDSCollectionViewController * cv = nav.viewControllers[0];
+        cv.status = WDSStatusFinished;
+        self.sidePanelController.centerPanel = nav;
     }
 
     [[self sidePanelController] toggleLeftPanel:nil];

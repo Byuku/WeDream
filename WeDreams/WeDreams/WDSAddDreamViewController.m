@@ -18,6 +18,31 @@
 
 static NSString *placerholderTextView = @"Description of your dream ...";
 
+#pragma mark - Managing the detail item
+
+- (void)setDetailItem:(id)newDetailItem
+{
+    
+    
+    if (_detailItem != newDetailItem) {
+        _detailItem = newDetailItem;
+       
+        // Update the view.
+        [self configureView];
+    }
+}
+
+- (void)configureView
+{
+    // Update the user interface for the detail item.
+    
+    if (self.detailItem) {
+        self.nameTextField.text = [self.detailItem title];
+        self.descriptionTextView.text = [self.detailItem description];
+    }
+}
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,14 +56,18 @@ static NSString *placerholderTextView = @"Description of your dream ...";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureView];
     // Do any additional setup after loading the view.
  
     self.navigationController.navigationBar.translucent = NO;
     self.nameTextField.delegate = self;
     self.descriptionTextView.delegate = self;
-    self.descriptionTextView.text = placerholderTextView;
-    self.descriptionTextView.textColor = [UIColor lightGrayColor];
-    
+    if ([self.descriptionTextView.text isEqualToString:@""])
+    {
+        self.descriptionTextView.text = placerholderTextView;
+        self.descriptionTextView.textColor = [UIColor lightGrayColor];
+    }
+  
     self.nameLabel.text = @"Title";
     self.descriptionLabel.text = @"Description";
    
@@ -52,10 +81,8 @@ static NSString *placerholderTextView = @"Description of your dream ...";
 
 - (IBAction)validationDream:(id)sender
 {
-    NSLog(@"%@, %@", self.nameTextField.text, self.descriptionTextView.text);
-    
-    if (![self.nameTextField.text isEqualToString:@"" ]&& ![self.descriptionTextView.text isEqualToString:@""])
-        self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
+    if (![self.nameTextField.text isEqualToString:@"" ] && ![self.descriptionTextView.text isEqualToString:@""])
+        self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -88,15 +115,5 @@ static NSString *placerholderTextView = @"Description of your dream ...";
     [textView resignFirstResponder];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

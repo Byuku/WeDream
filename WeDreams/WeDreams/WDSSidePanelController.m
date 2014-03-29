@@ -17,7 +17,7 @@
 -(void)awakeFromNib
 {
     [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
-    [self setCenterPanel:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]]];
+    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
     
 
    // [self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"shakerViewController"]];

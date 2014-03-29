@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WDSDream.h"
 
 @interface WDSShareDreamViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @property (strong, nonatomic) id detailItem;
+
+@property (nonatomic,assign) WDSStatus status;
 
 @end

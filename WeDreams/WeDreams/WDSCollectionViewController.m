@@ -23,6 +23,9 @@
 
 @implementation WDSCollectionViewController
 
+static NSString *inprogress = @"In progress";
+static NSString *realized = @"Realized";
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,7 +42,7 @@
     self.navigationController.navigationBar.translucent = NO;
 
     
-    if (self.status == WDSStatusCurrent)
+    if (self.status != WDSStatusFinished)
     {
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDream:)];
         self.navigationItem.rightBarButtonItem = addButton;
@@ -55,11 +58,14 @@
     WDSDream *d6 = [[WDSDream alloc] initWithParams:@"mon reve6" :@"mon reve6 est trop bien" :WDSStatusFinished];
     
     _dreams = [[NSMutableArray alloc]initWithObjects:d1, d2, d3, d4, d5, d6, nil];
-  
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %ld", @"status", self.status];
-    NSArray *filteredArray = [_dreams filteredArrayUsingPredicate:predicate];
     
-    _dreams = [filteredArray mutableCopy];
+    if (self.status != WDSStatusAll)
+    {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %ld", @"status", self.status];
+        NSArray *filteredArray = [_dreams filteredArrayUsingPredicate:predicate];
+        
+        _dreams = [filteredArray mutableCopy];
+    }
     
 }
 
@@ -88,21 +94,22 @@
     UILabel * title = (UILabel* ) [cell viewWithTag:100];
     title.text = [[_dreams objectAtIndex:indexPath.row] title];
 
-    UILabel * desc = (UILabel* ) [cell viewWithTag:101];
-    desc.text = [[_dreams objectAtIndex:indexPath.row] description];
+    UILabel * status = (UILabel* ) [cell viewWithTag:101];
+
+    status.text = ([[_dreams objectAtIndex:indexPath.row] status] == WDSStatusCurrent) ? inprogress : realized;
     
     if (indexPath.row % 2)
     {
         cell.backgroundColor = [UIColor colorWithRed:0.941 green:0.937 blue:0.937 alpha:1];
         title.textColor = [UIColor colorWithRed:0.467 green:0.682 blue:0.243 alpha:1];
-        desc.textColor = [UIColor colorWithRed:0.467 green:0.682 blue:0.243 alpha:1];
+        status.textColor = [UIColor colorWithRed:0.467 green:0.682 blue:0.243 alpha:1];
     }
     
     else
     {
         cell.backgroundColor = [UIColor colorWithRed:0.467 green:0.682 blue:0.243 alpha:1];
         title.textColor = [UIColor colorWithRed:0.941 green:0.937 blue:0.937 alpha:1];
-        desc.textColor = [UIColor colorWithRed:0.941 green:0.937 blue:0.937 alpha:1];
+        status.textColor = [UIColor colorWithRed:0.941 green:0.937 blue:0.937 alpha:1];
     }
     
     return cell;
@@ -111,36 +118,11 @@
 
 -(void)addDream:(UIBarButtonItem *)sender
 {
-    self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"addDreamViewController"]];
+    WDSAddDreamViewController * ad = [self.storyboard instantiateViewControllerWithIdentifier:@"addDreamViewController"];
+    ad.status = self.status;
+    self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:ad];
+    
 }
-
-//-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-
-//    WDSShareDreamViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"shareDreamViewController"];
-//    
-//    
-//
-//    self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:viewController];
-//    
-//    NSLog(@"%@",[[_dreams objectAtIndex:indexPath.row] title]);
-    
-//    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:viewController]animated:YES completion:nil];
-    
-//              NSLog(@"%ld", (long)indexPath.row);
-    
-//    WDSAddDreamViewController* addController = [self.storyboard instantiateViewControllerWithIdentifier:@"addDreamViewController"];
-//    
-//    
-//    addController.descriptionTextView.text = [[_dreams objectAtIndex:indexPath.row] description];
-// 
-//    addController.nameTextField.text = @"sdfdsfdsfdsfdsf";
-//    self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:addController];
-//    
-//    addController = self.sidePanelController.centerPanel.navigationController.viewControllers[0];
-//    addController.descriptionTextView.text = @"sdfdsfdsfdsfdsf";
-   
-//}
 
 
 
@@ -152,8 +134,9 @@
      
         NSIndexPath *IndexPath = [[self.collectionView indexPathsForSelectedItems] objectAtIndex:0];
         
-       // NSLog(@"%@", [[_dreams objectAtIndex:IndexPath.row] title]);
-        [[segue destinationViewController] setDetailItem:[_dreams objectAtIndex:IndexPath.row]];
+        NSArray *params = [[NSArray alloc] initWithObjects:[[NSString alloc] initWithFormat:@"%u", self.status], [_dreams objectAtIndex:IndexPath.row], nil];
+        
+        [[segue destinationViewController] setDetailItem:params];
         
     }
 }

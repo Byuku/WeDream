@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef enum _WDSStatus {
-    WDSStatusCurrent = 0,
+    WDSStatusAll = 0,
+    WDSStatusCurrent,
     WDSStatusFinished,
 } WDSStatus;
 
@@ -17,7 +18,7 @@ typedef enum _WDSStatus {
 
 @property (nonatomic,strong) NSString * title;
 @property (nonatomic,strong) NSString * description;
-@property (nonatomic,assign) WDSStatus status;
+@property (nonatomic,assign) WDSStatus status; // ne peut pas prendre WDSStatusAll
 
 - (id)initWithParams:(NSString *)title :(NSString *)description :(WDSStatus) status;
 

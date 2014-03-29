@@ -7,6 +7,7 @@
 //
 
 #import "WDSAddDreamViewController.h"
+#import "WDSCollectionViewController.h"
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 
@@ -82,7 +83,12 @@ static NSString *placerholderTextView = @"Description of your dream ...";
 - (IBAction)validationDream:(id)sender
 {
     if (![self.nameTextField.text isEqualToString:@"" ] && ![self.descriptionTextView.text isEqualToString:@""])
-        self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+    {
+        UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+        WDSCollectionViewController * cv = nav.viewControllers[0];
+        cv.status = self.status;
+        self.sidePanelController.centerPanel = nav;
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

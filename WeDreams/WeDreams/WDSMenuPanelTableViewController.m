@@ -21,6 +21,11 @@
 
 @implementation WDSMenuPanelTableViewController
 
+static NSString *all = @"All dreams";
+static NSString *inprogress = @"In progress dreams";
+static NSString *realized = @"Realized dreams";
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -34,7 +39,7 @@
 {
     [super viewDidLoad];
     
-    _objects = [[NSArray alloc] initWithObjects:@"Current dreams", @"Finished dreams", nil];
+    _objects = [[NSArray alloc] initWithObjects:all, inprogress, realized, nil];
     
     // under status bar
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
@@ -74,18 +79,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    NSLog(@"%@",_objects[indexPath.row]);
+   // NSLog(@"%@",_objects[indexPath.row]);
 
     if (indexPath.row == 0)
     {
-
+        UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+        WDSCollectionViewController * cv = nav.viewControllers[0];
+        cv.status = WDSStatusAll;
+        self.sidePanelController.centerPanel = nav;
+        
+    }
+   else if (indexPath.row == 1)
+    {
+        
         UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
         WDSCollectionViewController * cv = nav.viewControllers[0];
         cv.status = WDSStatusCurrent;
         self.sidePanelController.centerPanel = nav;
         
     }
-   else if (indexPath.row == 1)
+   else
     {
         
         UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];

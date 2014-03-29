@@ -34,9 +34,10 @@
     // Update the user interface for the detail item.
     
     if (self.detailItem) {
-        self.nameLabel.text = [self.detailItem title];
-        self.descriptionLabel.text = [self.detailItem description];
-        
+
+        self.status = [self.detailItem[0] intValue];
+        self.nameLabel.text = [self.detailItem[1] title];
+        self.descriptionLabel.text = [self.detailItem[1] description];
     }
 }
 
@@ -55,6 +56,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configureView];
+
+    if ([self.detailItem[1] status] == WDSStatusFinished)
+    {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
     
 }
 
@@ -66,7 +72,12 @@
 
 - (IBAction)shareDream:(id)sender
 {
-    NSLog(@"share");
+    
+   UIButton * button = (UIButton *) sender;
+    if (button.tag == 105)
+        NSLog(@"share contact");
+    else
+        NSLog(@"share moment");
 }
 
 #pragma mark - Navigation
@@ -75,7 +86,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showEditDetail"])
     {
-        [[segue destinationViewController] setDetailItem:_detailItem];
+        [[segue destinationViewController] setStatus:self.status];
+        [[segue destinationViewController] setDetailItem:_detailItem[1]];
     }
 }
 

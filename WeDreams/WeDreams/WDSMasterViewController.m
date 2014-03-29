@@ -30,6 +30,21 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = @"Some Title";
+    message.description = @"Amazing Sunset";
+    [message setThumbImage:[UIImage imageNamed:@"default_image"]];
+    
+    WXImageObject *ext = [WXImageObject object];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"res1"ofType:@"jpg"];
+    ext.imageData = [NSData dataWithContentsOfFile:filePath];
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneSession;
+    [WXApi sendReq:req];
 }
 
 - (void)didReceiveMemoryWarning

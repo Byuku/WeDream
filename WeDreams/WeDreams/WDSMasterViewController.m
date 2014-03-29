@@ -7,11 +7,14 @@
 //
 
 #import "WDSMasterViewController.h"
-
 #import "WDSDetailViewController.h"
+#import "WDSHelperIndexedList.h"
+#import "WDSFriend.h"
 
 @interface WDSMasterViewController () {
-    NSMutableArray *_objects;
+        NSArray * _objects;
+        NSArray *indices;
+        NSArray * _friends;
 }
 @end
 
@@ -26,10 +29,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    self.title = @"Friends dream";
+    
+    WDSFriend *friend1 = [[WDSFriend alloc] initWithParams:@"Tracy" :nil];
+    WDSFriend *friend2 = [[WDSFriend alloc] initWithParams:@"Steeve" :nil];
+    WDSFriend *friend3 = [[WDSFriend alloc] initWithParams:@"Flav" :nil];
+    WDSFriend *friend4 = [[WDSFriend alloc] initWithParams:@"Dorian" :nil];
+    
+    _friends = [[NSArray alloc] initWithObjects:friend1, friend2, friend3, friend4, nil];
+    
+    _objects = [WDSHelperIndexedList addContentInIndexedList:[WDSHelperIndexedList createDictionnaryForIndexedList:_friends :@"name"]];
+    
+    indices = [_objects valueForKey:@"headerTitle"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,76 +50,59 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
 
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return _objects.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return [[[_objects objectAtIndex:section] objectForKey:@"rowValues"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    
+    cell.textLabel.text = [[[_objects objectAtIndex:indexPath.section] objectForKey:@"rowValues"]
+                           objectAtIndex:indexPath.row];
+    
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+- (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section {
+	return [[_objects objectAtIndex:section] objectForKey:@"headerTitle"];
+    
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return [_objects valueForKey:@"headerTitle"];
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    return [indices indexOfObject:title];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"showDetail"])
+    {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        
+        NSString * name = [[[_objects objectAtIndex:indexPath.section] objectForKey:@"rowValues"]
+                           objectAtIndex:indexPath.row];
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"name", name];
+        NSArray *filteredArray = [_friends filteredArrayUsingPredicate:predicate];
+        
+        
+        [[segue destinationViewController] setDetailItem:[filteredArray objectAtIndex:0]];
     }
 }
-
 @end

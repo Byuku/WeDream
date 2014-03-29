@@ -10,9 +10,21 @@
 
 @implementation WDSAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+@synthesize window = _window;
+
+- (id)init
 {
-    // Override point for customization after application launch.
+    if(self = [super init]){
+        _scene = WXSceneSession;
+    }
+    return self;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{        
+    // Register the app
+    [WXApi registerApp:@"6533cc5dd2c01803f6743160eec1a294" withDescription:@"An app to manage and share dreams"];
+    
     return YES;
 }
 							

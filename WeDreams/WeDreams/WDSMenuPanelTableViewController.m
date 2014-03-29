@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     
-    _objects = [[NSArray alloc] initWithObjects:@"My dreams", @"Friends dreams", nil];
+    _objects = [[NSArray alloc] initWithObjects:@"All dreams", @"Current dreams", @"Completed dreams", nil];
     
     // under status bar
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
@@ -81,17 +81,20 @@
         self.sidePanelController.centerPanel = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
         
     }
-   else if (indexPath.row == 1)
+    else if (indexPath.row == 1)
     {
         
         self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"friendsViewController"];
-
+        
+    }
+    else if (indexPath.row == 2)
+    {
+        
+        self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"friendsViewController"];
+        
     }
 
     [[self sidePanelController] toggleLeftPanel:nil];
-    
-    
-    
 }
 
 

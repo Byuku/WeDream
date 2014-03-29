@@ -32,6 +32,7 @@
 		EEE78AFB18E6A71700B055A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEE78AF918E6A71700B055A3 /* InfoPlist.strings */; };
 		EEE78AFD18E6A71700B055A3 /* WeDreamsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE78AFC18E6A71700B055A3 /* WeDreamsTests.m */; };
 		EEE78B1318E6AD4000B055A3 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE78B1018E6AD4000B055A3 /* libWeChatSDK.a */; };
+		FEA93CA518E72439009ED8B9 /* WeChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA93CA418E72439009ED8B9 /* WeChatManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		EEE78B1018E6AD4000B055A3 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		EEE78B1118E6AD4000B055A3 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		EEE78B1218E6AD4000B055A3 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		FEA93CA318E72439009ED8B9 /* WeChatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatManager.h; sourceTree = "<group>"; };
+		FEA93CA418E72439009ED8B9 /* WeChatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 		EE1E252618E6B8C400F710CC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				FEA93CA318E72439009ED8B9 /* WeChatManager.h */,
+				FEA93CA418E72439009ED8B9 /* WeChatManager.m */,
 				EE1E252D18E6B8F800F710CC /* WDSHelperIndexedList.h */,
 				EE1E252E18E6B8F800F710CC /* WDSHelperIndexedList.m */,
 			);
@@ -298,9 +303,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = flav;
 				TargetAttributes = {
-					EEE78ACA18E6A71700B055A3 = {
-						DevelopmentTeam = GASSKSEXDM;
-					};
 					EEE78AEE18E6A71700B055A3 = {
 						TestTargetID = EEE78ACA18E6A71700B055A3;
 					};
@@ -353,6 +355,7 @@
 			files = (
 				EE1E253B18E6C08700F710CC /* WDSFriend.m in Sources */,
 				EEE78AE818E6A71700B055A3 /* WDSDetailViewController.m in Sources */,
+				FEA93CA518E72439009ED8B9 /* WeChatManager.m in Sources */,
 				EE1E253518E6B9E600F710CC /* WDSMenuPanelTableViewController.m in Sources */,
 				EE1E252B18E6B8D600F710CC /* JASidePanelController.m in Sources */,
 				EE1E253E18E6C16C00F710CC /* WDSDream.m in Sources */,
@@ -488,8 +491,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeDreams/WeDreams-Prefix.pch";
 				INFOPLIST_FILE = "WeDreams/WeDreams-Info.plist";
@@ -499,7 +500,6 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -510,8 +510,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeDreams/WeDreams-Prefix.pch";
 				INFOPLIST_FILE = "WeDreams/WeDreams-Info.plist";
@@ -520,7 +518,6 @@
 					"$(PROJECT_DIR)/WeDreams/SDKExport",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

@@ -9,6 +9,7 @@
 #import "WDSAddDreamViewController.h"
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
+#import "WeChatManager.h"
 
 @interface WDSAddDreamViewController ()
 
@@ -41,6 +42,8 @@ static NSString *placerholderTextView = @"Description of your dream ...";
     
     self.nameLabel.text = @"Title";
     self.descriptionLabel.text = @"Description";
+    
+    [WeChatManager sendLinkContent];
    
 }
 

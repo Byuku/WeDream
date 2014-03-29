@@ -11,6 +11,9 @@
 #import "WXApi.h"
 
 @interface WDSAppDelegate : UIResponder <UIApplicationDelegate, WXApiDelegate>
+{
+    enum WXScene _scene;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

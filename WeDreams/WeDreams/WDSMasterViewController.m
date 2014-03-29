@@ -13,7 +13,7 @@
 
 @interface WDSMasterViewController () {
         NSArray * _objects;
-        NSArray *indices;
+        NSArray * indices;
         NSArray * _friends;
 }
 @end
@@ -29,9 +29,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
+
     self.title = @"Friends dream";
     
     WDSFriend *friend1 = [[WDSFriend alloc] initWithParams:@"Tracy" :nil];

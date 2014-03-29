@@ -29,26 +29,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
-<<<<<<< HEAD
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    WXMediaMessage *message = [WXMediaMessage message];
-    message.title = @"Some Title";
-    message.description = @"Amazing Sunset";
-    [message setThumbImage:[UIImage imageNamed:@"default_image"]];
-    
-    WXImageObject *ext = [WXImageObject object];
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"res1"ofType:@"jpg"];
-    ext.imageData = [NSData dataWithContentsOfFile:filePath];
-    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    
-    req.bText = NO;
-    req.message = message;
-    req.scene = WXSceneSession;
-    [WXApi sendReq:req];
-=======
     self.title = @"Friends dream";
     
     WDSFriend *friend1 = [[WDSFriend alloc] initWithParams:@"Tracy" :nil];
@@ -61,7 +44,6 @@
     _objects = [WDSHelperIndexedList addContentInIndexedList:[WDSHelperIndexedList createDictionnaryForIndexedList:_friends :@"name"]];
     
     indices = [_objects valueForKey:@"headerTitle"];
->>>>>>> flav
 }
 
 - (void)didReceiveMemoryWarning

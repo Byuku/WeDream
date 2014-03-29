@@ -8,14 +8,17 @@
 
 #import "WeChatManager.h"
 
+static NSString *WeChatNotInstalledError = @"WeChat app is not installed";
+static NSString *WeChatSharingError = @"Sharing error" ;
+
 @implementation WeChatManager
 
--(void) changeScene:(NSInteger)scene
++(void) changeSharingMode:(NSInteger)scene
 {
     _scene = scene;
 }
 
--(void) onReq:(BaseReq*)req
++(void) onReq :(BaseReq*)req
 {
     if([req isKindOfClass:[GetMessageFromWXReq class]])
     {
@@ -51,7 +54,7 @@
     }
 }
 
--(void) onResp:(BaseResp*)resp
++(void) onResp:(BaseResp*)resp
 {
     if([resp isKindOfClass:[SendMessageToWXResp class]])
     {
@@ -68,17 +71,26 @@
     }
 }
 
-- (void) sendTextContent
++ (void) sendTextContent: (NSString *)message
 {
+    if (![WXApi isWXAppInstalled]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"WeChat app is not installed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+    
     SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    req.text = @"Beneath it were the words: Stay Hungry. Stay Foolish. It was their farewell message as they signed off. Stay Hungry. Stay Foolish.";
+    req.text = message;
     req.bText = YES;
     req.scene = _scene;
     
-    [WXApi sendReq:req];
+    if (![WXApi sendReq:req]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Sharing error" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
 }
 
--(void) RespTextContent
++(void) RespTextContent
 {
     GetMessageFromWXResp* resp = [[GetMessageFromWXResp alloc] init];
     resp.text = @"Beneath it were the words: Stay Hungry. Stay Foolish. It was their farewell message as they signed off. Stay Hungry. Stay Foolish.";
@@ -87,26 +99,33 @@
     [WXApi sendResp:resp];
 }
 
-- (void) sendImageContent
++ (void) sendImageContent:(UIImage *)image
 {
+    if (![WXApi isWXAppInstalled]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:WeChatNotInstalledError delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+    
     WXMediaMessage *message = [WXMediaMessage message];
-    [message setThumbImage:[UIImage imageNamed:@"res1thumb.png"]];
-    
+
+    //[message setThumbImage:[image resizedImage:CGSizeMake(100,100) interpolationQuality:kCGInterpolationDefault]];
     WXImageObject *ext = [WXImageObject object];
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"res1" ofType:@"jpg"];
-    ext.imageData = [NSData dataWithContentsOfFile:filePath];
-    
+    ext.imageData = UIImageJPEGRepresentation(image, 0.8);
     message.mediaObject = ext;
     
     SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
     req.bText = NO;
     req.message = message;
     req.scene = _scene;
-    
-    [WXApi sendReq:req];
+
+    if (![WXApi sendReq:req]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:WeChatSharingError delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
 }
 
-- (void) RespImageContent
++ (void) RespImageContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     [message setThumbImage:[UIImage imageNamed:@"res1thumb.png"]];
@@ -122,15 +141,21 @@
     [WXApi sendResp:resp];
 }
 
-+ (void) sendLinkContent
++ (void) sendLinkContent: (NSString *)title :(NSString *)description :(NSString *)url :(UIImage *)image
 {
+    if (![WXApi isWXAppInstalled]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:WeChatNotInstalledError delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+    
     WXMediaMessage *message = [WXMediaMessage message];
-    message.title = @"Acer Aspire P3 review: a nice enough tablet, but wait for the refresh";
-    message.description = @"Back when Windows 8 first launched, the Acer Iconia W700 quickly became one of our favorite laptop / tablet hybrids. There were two reasons for that, really: the price was right, and the battery lasted longer than pretty much any other Win 8 device we'd tested. ";
-    [message setThumbImage:[UIImage imageNamed:@"Engadget.png"]];
+    message.title = title;
+    message.description = description;
+    [message setThumbImage:image];
     
     WXWebpageObject *ext = [WXWebpageObject object];
-    ext.webpageUrl = @"http://www.engadget.com/2013/06/22/acer-aspire-p3-review/";
+    ext.webpageUrl = url;
     
     message.mediaObject = ext;
     
@@ -139,10 +164,13 @@
     req.message = message;
     req.scene = _scene;
     
-    [WXApi sendReq:req];
+    if (![WXApi sendReq:req]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:WeChatSharingError delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
 }
 
--(void) RespLinkContent
++ (void) RespLinkContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"Acer Aspire P3 review: a nice enough tablet, but wait for the refresh";
@@ -161,7 +189,7 @@
     [WXApi sendResp:resp];
 }
 
--(void) sendMusicContent
++ (void) sendMusicContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"A Voice for You!";
@@ -181,7 +209,7 @@
     [WXApi sendReq:req];
 }
 
--(void) RespMusicContent
++ (void) RespMusicContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"A Voice for You!";
@@ -200,7 +228,7 @@
     [WXApi sendResp:resp];
 }
 
--(void) sendVideoContent
++ (void) sendVideoContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"Steve Jobs";
@@ -220,7 +248,7 @@
     [WXApi sendReq:req];
 }
 
--(void) RespVideoContent
++ (void) RespVideoContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"Steve Jobs";
@@ -240,7 +268,7 @@
 }
 
 #define BUFFER_SIZE 1024 * 100
-- (void) sendAppContent
++ (void) sendAppContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"App Message";
@@ -268,7 +296,7 @@
     [WXApi sendReq:req];
 }
 
--(void) RespAppContent
++ (void) RespAppContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"App Message";
@@ -295,7 +323,7 @@
     [WXApi sendResp:resp];
 }
 
-- (void) sendNonGifContent
++ (void) sendNonGifContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     [message setThumbImage:[UIImage imageNamed:@"res5thumb.png"]];
@@ -314,7 +342,8 @@
     [WXApi sendReq:req];
 }
 
-- (void)RespNonGifContent{
++ (void)RespNonGifContent
+{
     WXMediaMessage *message = [WXMediaMessage message];
     [message setThumbImage:[UIImage imageNamed:@"res5thumb.png"]];
     
@@ -349,7 +378,7 @@
     [WXApi sendReq:req];
 }
 
-- (void)RespGifContent
++ (void)RespGifContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     [message setThumbImage:[UIImage imageNamed:@"res6thumb.png"]];
@@ -365,7 +394,7 @@
     [WXApi sendResp:resp];
 }
 
-- (void) RespEmoticonContent
++ (void) RespEmoticonContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     [message setThumbImage:[UIImage imageNamed:@"res5thumb.png"]];
@@ -381,7 +410,7 @@
     [WXApi sendResp:resp];
 }
 
-- (void)sendFileContent
++ (void)sendFileContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"Test.xml";
@@ -403,7 +432,7 @@
     [WXApi sendReq:req];
 }
 
-- (void)RespFileContent
++ (void)RespFileContent
 {
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = @"ML.pdf";

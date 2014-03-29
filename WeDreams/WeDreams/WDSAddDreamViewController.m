@@ -19,7 +19,6 @@
 
 static NSString *placerholderTextView = @"Description of your dream ...";
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -43,7 +42,8 @@ static NSString *placerholderTextView = @"Description of your dream ...";
     self.nameLabel.text = @"Title";
     self.descriptionLabel.text = @"Description";
     
-    [WeChatManager sendLinkContent];
+    [WeChatManager changeSharingMode:WXSceneTimeline];
+    [WeChatManager sendLinkContent:@"CostardRouge.eu" : @"Steeve Pommier's portfolio" : @"http:://www.costardrouge.eu" : [UIImage imageNamed:@"lol.png"]];
    
 }
 

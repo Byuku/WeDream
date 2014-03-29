@@ -10,6 +10,7 @@
 #import "WDSAddDreamViewController.h"
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
+#import "WeChatManager.h"
 
 @interface WDSShareDreamViewController ()
 
@@ -72,12 +73,14 @@
 
 - (IBAction)shareDream:(id)sender
 {
-    
    UIButton * button = (UIButton *) sender;
+
     if (button.tag == 105)
-        NSLog(@"share contact");
+        [WeChatManager changeSharingMode:WXSceneSession];
     else
-        NSLog(@"share moment");
+        [WeChatManager changeSharingMode:WXSceneTimeline];
+        
+    [WeChatManager sendTextContent:[[NSString alloc] initWithFormat:@"Dream: %@ (%@)", self.nameLabel.text, self.descriptionLabel.text]];
 }
 
 #pragma mark - Navigation

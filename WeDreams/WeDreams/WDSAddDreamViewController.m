@@ -20,8 +20,6 @@
 
 static NSString *placerholderTextView = @"Description of your dream ...";
 
-<<<<<<< HEAD
-=======
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem
@@ -46,9 +44,6 @@ static NSString *placerholderTextView = @"Description of your dream ...";
     }
 }
 
-
-
->>>>>>> flav
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

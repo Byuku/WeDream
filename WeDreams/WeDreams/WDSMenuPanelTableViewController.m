@@ -39,12 +39,9 @@ static NSString *realized = @"Realized dreams";
 {
     [super viewDidLoad];
     
-<<<<<<< HEAD
-    _objects = [[NSArray alloc] initWithObjects:@"All dreams", @"Current dreams", @"Completed dreams", nil];
-=======
+
     _objects = [[NSArray alloc] initWithObjects:all, inprogress, realized, nil];
->>>>>>> flav
-    
+
     // under status bar
     self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     
@@ -96,30 +93,17 @@ static NSString *realized = @"Realized dreams";
     else if (indexPath.row == 1)
     {
         
-<<<<<<< HEAD
-        self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"friendsViewController"];
-        
-    }
-    else if (indexPath.row == 2)
-    {
-        
-        self.sidePanelController.centerPanel = [self.storyboard instantiateViewControllerWithIdentifier:@"friendsViewController"];
-        
-=======
         UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
         WDSCollectionViewController * cv = nav.viewControllers[0];
         cv.status = WDSStatusCurrent;
         self.sidePanelController.centerPanel = nav;
-        
     }
    else
     {
-        
         UINavigationController * nav = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
         WDSCollectionViewController * cv = nav.viewControllers[0];
         cv.status = WDSStatusFinished;
         self.sidePanelController.centerPanel = nav;
->>>>>>> flav
     }
 
     [[self sidePanelController] toggleLeftPanel:nil];

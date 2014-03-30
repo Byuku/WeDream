@@ -70,10 +70,6 @@ static NSString *placerholderTextView = @"Description of your dream ...";
   
     self.nameLabel.text = @"Title";
     self.descriptionLabel.text = @"Description";
-    
-    [WeChatManager changeSharingMode:WXSceneTimeline];
-    [WeChatManager sendLinkContent:@"CostardRouge.eu" : @"Steeve Pommier's portfolio" : @"http:://www.costardrouge.eu" : [UIImage imageNamed:@"lol.png"]];
-   
 }
 
 - (void)didReceiveMemoryWarning

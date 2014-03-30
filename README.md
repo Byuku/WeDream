@@ -4,10 +4,10 @@
 ### Our Idea
 WeDream : an app to share our dreams.
 
-![](Assets/Logo.png "WeDream LOGO")
-![](Assets/0.png "WeDream 1")
-![](Assets/1.png "WeDream 2")
-![](Assets/2.png "WeDream 3")
+![](Assets/a.png "WeDream LOGO")
+![](Assets/b.png "WeDream 1")
+![](Assets/c.png "WeDream 2")
+![](Assets/d.png "WeDream 3")
 
 ### How to use
 

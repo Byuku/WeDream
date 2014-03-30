@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE5F3CF518E872020020AA49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F3CF418E872020020AA49 /* Foundation.framework */; };
+		FE5F3CF718E872020020AA49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F3CF618E872020020AA49 /* CoreGraphics.framework */; };
+		FE5F3CF918E872020020AA49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F3CF818E872020020AA49 /* UIKit.framework */; };
+		FE5F3D0518E872020020AA49 /* WDSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D0418E872020020AA49 /* WDSAppDelegate.m */; };
+		FE5F3D0E18E872020020AA49 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F3D0D18E872020020AA49 /* XCTest.framework */; };
+		FE5F3D0F18E872020020AA49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F3CF418E872020020AA49 /* Foundation.framework */; };
+		FE5F3D1018E872020020AA49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F3CF818E872020020AA49 /* UIKit.framework */; };
+		FE5F3D1818E872020020AA49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE5F3D1618E872020020AA49 /* InfoPlist.strings */; };
+		FE5F3D1A18E872020020AA49 /* WeDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D1918E872020020AA49 /* WeDreamTests.m */; };
+		FE5F3D2718E872BE0020AA49 /* WeChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D2418E872BE0020AA49 /* WeChatManager.m */; };
+		FE5F3D2818E872BE0020AA49 /* WeChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D2418E872BE0020AA49 /* WeChatManager.m */; };
+		FE5F3D2918E872BE0020AA49 /* WDSHelperIndexedList.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D2618E872BE0020AA49 /* WDSHelperIndexedList.m */; };
+		FE5F3D2A18E872BE0020AA49 /* WDSHelperIndexedList.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D2618E872BE0020AA49 /* WDSHelperIndexedList.m */; };
+		FE5F3D4118E8730E0020AA49 /* WDSMenuPanelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3418E8730E0020AA49 /* WDSMenuPanelTableViewController.m */; };
+		FE5F3D4218E8730E0020AA49 /* WDSMenuPanelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3418E8730E0020AA49 /* WDSMenuPanelTableViewController.m */; };
+		FE5F3D4318E8730E0020AA49 /* WDSSidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3618E8730E0020AA49 /* WDSSidePanelController.m */; };
+		FE5F3D4418E8730E0020AA49 /* WDSSidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3618E8730E0020AA49 /* WDSSidePanelController.m */; };
+		FE5F3D4518E8730E0020AA49 /* WDSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3818E8730E0020AA49 /* WDSMasterViewController.m */; };
+		FE5F3D4618E8730E0020AA49 /* WDSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3818E8730E0020AA49 /* WDSMasterViewController.m */; };
+		FE5F3D4718E8730E0020AA49 /* WDSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3A18E8730E0020AA49 /* WDSDetailViewController.m */; };
+		FE5F3D4818E8730E0020AA49 /* WDSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3A18E8730E0020AA49 /* WDSDetailViewController.m */; };
+		FE5F3D4918E8730E0020AA49 /* WDSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3C18E8730E0020AA49 /* WDSCollectionViewController.m */; };
+		FE5F3D4A18E8730E0020AA49 /* WDSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3C18E8730E0020AA49 /* WDSCollectionViewController.m */; };
+		FE5F3D4B18E8730E0020AA49 /* WDSAddDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3E18E8730E0020AA49 /* WDSAddDreamViewController.m */; };
+		FE5F3D4C18E8730E0020AA49 /* WDSAddDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D3E18E8730E0020AA49 /* WDSAddDreamViewController.m */; };
+		FE5F3D4D18E8730E0020AA49 /* WDSShareDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D4018E8730E0020AA49 /* WDSShareDreamViewController.m */; };
+		FE5F3D4E18E8730E0020AA49 /* WDSShareDreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D4018E8730E0020AA49 /* WDSShareDreamViewController.m */; };
+		FE5F3D5518E873460020AA49 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D5218E873460020AA49 /* JASidePanelController.m */; };
+		FE5F3D5618E873460020AA49 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D5218E873460020AA49 /* JASidePanelController.m */; };
+		FE5F3D5718E873460020AA49 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D5418E873460020AA49 /* UIViewController+JASidePanel.m */; };
+		FE5F3D5818E873460020AA49 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D5418E873460020AA49 /* UIViewController+JASidePanel.m */; };
+		FE5F3D5D18E8735C0020AA49 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F3D5A18E8735C0020AA49 /* libWeChatSDK.a */; };
+		FE5F3D5E18E8735D0020AA49 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5F3D5A18E8735C0020AA49 /* libWeChatSDK.a */; };
+		FE5F3D6418E873770020AA49 /* WDSFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D6118E873770020AA49 /* WDSFriend.m */; };
+		FE5F3D6518E873770020AA49 /* WDSFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D6118E873770020AA49 /* WDSFriend.m */; };
+		FE5F3D6618E873770020AA49 /* WDSDream.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D6318E873770020AA49 /* WDSDream.m */; };
+		FE5F3D6718E873770020AA49 /* WDSDream.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F3D6318E873770020AA49 /* WDSDream.m */; };
+		FE5F3D6A18E873B80020AA49 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5F3D6918E873B80020AA49 /* Images.xcassets */; };
+		FE5F3D6B18E873B80020AA49 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5F3D6918E873B80020AA49 /* Images.xcassets */; };
+		FE99A32318E88343008C61FF /* WeDream-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE99A32218E88343008C61FF /* WeDream-Info.plist */; };
+		FE99A32518E884CC008C61FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE99A32418E884CC008C61FF /* main.m */; };
+		FE99A32718E8850D008C61FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE99A32618E8850D008C61FF /* InfoPlist.strings */; };
+		FE99A32918E8855A008C61FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE99A32818E8855A008C61FF /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE5F3D1118E872020020AA49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE5F3CE918E872020020AA49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE5F3CF018E872020020AA49;
+			remoteInfo = WeDream;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE5F3CF118E872020020AA49 /* WeDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE5F3CF418E872020020AA49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE5F3CF618E872020020AA49 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FE5F3CF818E872020020AA49 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE5F3D0318E872020020AA49 /* WDSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDSAppDelegate.h; sourceTree = "<group>"; };
+		FE5F3D0418E872020020AA49 /* WDSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDSAppDelegate.m; sourceTree = "<group>"; };
+		FE5F3D0C18E872020020AA49 /* WeDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE5F3D0D18E872020020AA49 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FE5F3D1518E872020020AA49 /* WeDreamTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeDreamTests-Info.plist"; sourceTree = "<group>"; };
+		FE5F3D1718E872020020AA49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE5F3D1918E872020020AA49 /* WeDreamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WeDreamTests.m; path = WeDreamTests/WeDreamTests.m; sourceTree = SOURCE_ROOT; };
+		FE5F3D2318E872BE0020AA49 /* WeChatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatManager.h; sourceTree = "<group>"; };
+		FE5F3D2418E872BE0020AA49 /* WeChatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatManager.m; sourceTree = "<group>"; };
+		FE5F3D2518E872BE0020AA49 /* WDSHelperIndexedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSHelperIndexedList.h; sourceTree = "<group>"; };
+		FE5F3D2618E872BE0020AA49 /* WDSHelperIndexedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSHelperIndexedList.m; sourceTree = "<group>"; };
+		FE5F3D3318E8730E0020AA49 /* WDSMenuPanelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSMenuPanelTableViewController.h; sourceTree = "<group>"; };
+		FE5F3D3418E8730E0020AA49 /* WDSMenuPanelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSMenuPanelTableViewController.m; sourceTree = "<group>"; };
+		FE5F3D3518E8730E0020AA49 /* WDSSidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSSidePanelController.h; sourceTree = "<group>"; };
+		FE5F3D3618E8730E0020AA49 /* WDSSidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSSidePanelController.m; sourceTree = "<group>"; };
+		FE5F3D3718E8730E0020AA49 /* WDSMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSMasterViewController.h; sourceTree = "<group>"; };
+		FE5F3D3818E8730E0020AA49 /* WDSMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSMasterViewController.m; sourceTree = "<group>"; };
+		FE5F3D3918E8730E0020AA49 /* WDSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSDetailViewController.h; sourceTree = "<group>"; };
+		FE5F3D3A18E8730E0020AA49 /* WDSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSDetailViewController.m; sourceTree = "<group>"; };
+		FE5F3D3B18E8730E0020AA49 /* WDSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSCollectionViewController.h; sourceTree = "<group>"; };
+		FE5F3D3C18E8730E0020AA49 /* WDSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSCollectionViewController.m; sourceTree = "<group>"; };
+		FE5F3D3D18E8730E0020AA49 /* WDSAddDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSAddDreamViewController.h; sourceTree = "<group>"; };
+		FE5F3D3E18E8730E0020AA49 /* WDSAddDreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSAddDreamViewController.m; sourceTree = "<group>"; };
+		FE5F3D3F18E8730E0020AA49 /* WDSShareDreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSShareDreamViewController.h; sourceTree = "<group>"; };
+		FE5F3D4018E8730E0020AA49 /* WDSShareDreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSShareDreamViewController.m; sourceTree = "<group>"; };
+		FE5F3D5118E873460020AA49 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		FE5F3D5218E873460020AA49 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		FE5F3D5318E873460020AA49 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		FE5F3D5418E873460020AA49 /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
+		FE5F3D5A18E8735C0020AA49 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		FE5F3D5B18E8735C0020AA49 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		FE5F3D5C18E8735C0020AA49 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		FE5F3D6018E873770020AA49 /* WDSFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSFriend.h; sourceTree = "<group>"; };
+		FE5F3D6118E873770020AA49 /* WDSFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSFriend.m; sourceTree = "<group>"; };
+		FE5F3D6218E873770020AA49 /* WDSDream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSDream.h; sourceTree = "<group>"; };
+		FE5F3D6318E873770020AA49 /* WDSDream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSDream.m; sourceTree = "<group>"; };
+		FE5F3D6918E873B80020AA49 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		FE99A32218E88343008C61FF /* WeDream-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WeDream-Info.plist"; path = "WeDreamTests/WeDream-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FE99A32418E884CC008C61FF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE99A32618E8850D008C61FF /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		FE99A32818E8855A008C61FF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE5F3CEE18E872020020AA49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE5F3CF718E872020020AA49 /* CoreGraphics.framework in Frameworks */,
+				FE5F3CF918E872020020AA49 /* UIKit.framework in Frameworks */,
+				FE5F3D5D18E8735C0020AA49 /* libWeChatSDK.a in Frameworks */,
+				FE5F3CF518E872020020AA49 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE5F3D0918E872020020AA49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE5F3D0E18E872020020AA49 /* XCTest.framework in Frameworks */,
+				FE5F3D1018E872020020AA49 /* UIKit.framework in Frameworks */,
+				FE5F3D5E18E8735D0020AA49 /* libWeChatSDK.a in Frameworks */,
+				FE5F3D0F18E872020020AA49 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE5F3CE818E872020020AA49 = {
+			isa = PBXGroup;
+			children = (
+				FE5F3CFA18E872020020AA49 /* WeDream */,
+				FE5F3D1318E872020020AA49 /* WeDreamTests */,
+				FE5F3CF318E872020020AA49 /* Frameworks */,
+				FE5F3CF218E872020020AA49 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE5F3CF218E872020020AA49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3CF118E872020020AA49 /* WeDream.app */,
+				FE5F3D0C18E872020020AA49 /* WeDreamTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE5F3CF318E872020020AA49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3CF418E872020020AA49 /* Foundation.framework */,
+				FE5F3CF618E872020020AA49 /* CoreGraphics.framework */,
+				FE5F3CF818E872020020AA49 /* UIKit.framework */,
+				FE5F3D0D18E872020020AA49 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE5F3CFA18E872020020AA49 /* WeDream */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3D6918E873B80020AA49 /* Images.xcassets */,
+				FE99A32818E8855A008C61FF /* Main.storyboard */,
+				FE5F3D5018E8732E0020AA49 /* Helper */,
+				FE5F3D5918E873510020AA49 /* JASidePanels */,
+				FE5F3D5F18E873630020AA49 /* SDKExport */,
+				FE5F3D6818E8737D0020AA49 /* Model */,
+				FE5F3D4F18E873180020AA49 /* Controller */,
+				FE5F3D0318E872020020AA49 /* WDSAppDelegate.h */,
+				FE5F3D0418E872020020AA49 /* WDSAppDelegate.m */,
+				FE5F3D7718E8743C0020AA49 /* Supporting Files */,
+			);
+			path = WeDream;
+			sourceTree = "<group>";
+		};
+		FE5F3D1318E872020020AA49 /* WeDreamTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3D1418E872020020AA49 /* Supporting Files */,
+			);
+			path = WeDreamTests;
+			sourceTree = "<group>";
+		};
+		FE5F3D1418E872020020AA49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3D1518E872020020AA49 /* WeDreamTests-Info.plist */,
+				FE5F3D1618E872020020AA49 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE5F3D4F18E873180020AA49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3D3318E8730E0020AA49 /* WDSMenuPanelTableViewController.h */,
+				FE5F3D3418E8730E0020AA49 /* WDSMenuPanelTableViewController.m */,
+				FE5F3D3518E8730E0020AA49 /* WDSSidePanelController.h */,
+				FE5F3D3618E8730E0020AA49 /* WDSSidePanelController.m */,
+				FE5F3D3718E8730E0020AA49 /* WDSMasterViewController.h */,
+				FE5F3D3818E8730E0020AA49 /* WDSMasterViewController.m */,
+				FE5F3D3918E8730E0020AA49 /* WDSDetailViewController.h */,
+				FE5F3D3A18E8730E0020AA49 /* WDSDetailViewController.m */,
+				FE5F3D3B18E8730E0020AA49 /* WDSCollectionViewController.h */,
+				FE5F3D3C18E8730E0020AA49 /* WDSCollectionViewController.m */,
+				FE5F3D3D18E8730E0020AA49 /* WDSAddDreamViewController.h */,
+				FE5F3D3E18E8730E0020AA49 /* WDSAddDreamViewController.m */,
+				FE5F3D3F18E8730E0020AA49 /* WDSShareDreamViewController.h */,
+				FE5F3D4018E8730E0020AA49 /* WDSShareDreamViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		FE5F3D5018E8732E0020AA49 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3D2318E872BE0020AA49 /* WeChatManager.h */,
+				FE5F3D2418E872BE0020AA49 /* WeChatManager.m */,
+				FE5F3D2518E872BE0020AA49 /* WDSHelperIndexedList.h */,
+				FE5F3D2618E872BE0020AA49 /* WDSHelperIndexedList.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		FE5F3D5918E873510020AA49 /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3D5118E873460020AA49 /* JASidePanelController.h */,
+				FE5F3D5218E873460020AA49 /* JASidePanelController.m */,
+				FE5F3D5318E873460020AA49 /* UIViewController+JASidePanel.h */,
+				FE5F3D5418E873460020AA49 /* UIViewController+JASidePanel.m */,
+			);
+			name = JASidePanels;
+			sourceTree = "<group>";
+		};
+		FE5F3D5F18E873630020AA49 /* SDKExport */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3D5A18E8735C0020AA49 /* libWeChatSDK.a */,
+				FE5F3D5B18E8735C0020AA49 /* WXApi.h */,
+				FE5F3D5C18E8735C0020AA49 /* WXApiObject.h */,
+			);
+			name = SDKExport;
+			sourceTree = "<group>";
+		};
+		FE5F3D6818E8737D0020AA49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE5F3D6018E873770020AA49 /* WDSFriend.h */,
+				FE5F3D6118E873770020AA49 /* WDSFriend.m */,
+				FE5F3D6218E873770020AA49 /* WDSDream.h */,
+				FE5F3D6318E873770020AA49 /* WDSDream.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FE5F3D7718E8743C0020AA49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE99A32218E88343008C61FF /* WeDream-Info.plist */,
+				FE99A32418E884CC008C61FF /* main.m */,
+				FE99A32618E8850D008C61FF /* InfoPlist.strings */,
+				FE5F3D1918E872020020AA49 /* WeDreamTests.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE5F3CF018E872020020AA49 /* WeDream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE5F3D1D18E872020020AA49 /* Build configuration list for PBXNativeTarget "WeDream" */;
+			buildPhases = (
+				FE5F3CED18E872020020AA49 /* Sources */,
+				FE5F3CEE18E872020020AA49 /* Frameworks */,
+				FE5F3CEF18E872020020AA49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeDream;
+			productName = WeDream;
+			productReference = FE5F3CF118E872020020AA49 /* WeDream.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE5F3D0B18E872020020AA49 /* WeDreamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE5F3D2018E872020020AA49 /* Build configuration list for PBXNativeTarget "WeDreamTests" */;
+			buildPhases = (
+				FE5F3D0818E872020020AA49 /* Sources */,
+				FE5F3D0918E872020020AA49 /* Frameworks */,
+				FE5F3D0A18E872020020AA49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE5F3D1218E872020020AA49 /* PBXTargetDependency */,
+			);
+			name = WeDreamTests;
+			productName = WeDreamTests;
+			productReference = FE5F3D0C18E872020020AA49 /* WeDreamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE5F3CE918E872020020AA49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WDS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = While42Hackaton;
+				TargetAttributes = {
+					FE5F3D0B18E872020020AA49 = {
+						TestTargetID = FE5F3CF018E872020020AA49;
+					};
+				};
+			};
+			buildConfigurationList = FE5F3CEC18E872020020AA49 /* Build configuration list for PBXProject "WeDream" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FE5F3CE818E872020020AA49;
+			productRefGroup = FE5F3CF218E872020020AA49 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE5F3CF018E872020020AA49 /* WeDream */,
+				FE5F3D0B18E872020020AA49 /* WeDreamTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE5F3CEF18E872020020AA49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE99A32918E8855A008C61FF /* Main.storyboard in Resources */,
+				FE5F3D6A18E873B80020AA49 /* Images.xcassets in Resources */,
+				FE99A32718E8850D008C61FF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE5F3D0A18E872020020AA49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE5F3D1818E872020020AA49 /* InfoPlist.strings in Resources */,
+				FE5F3D6B18E873B80020AA49 /* Images.xcassets in Resources */,
+				FE99A32318E88343008C61FF /* WeDream-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE5F3CED18E872020020AA49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE5F3D2918E872BE0020AA49 /* WDSHelperIndexedList.m in Sources */,
+				FE5F3D4518E8730E0020AA49 /* WDSMasterViewController.m in Sources */,
+				FE5F3D5518E873460020AA49 /* JASidePanelController.m in Sources */,
+				FE5F3D5718E873460020AA49 /* UIViewController+JASidePanel.m in Sources */,
+				FE5F3D4B18E8730E0020AA49 /* WDSAddDreamViewController.m in Sources */,
+				FE5F3D6418E873770020AA49 /* WDSFriend.m in Sources */,
+				FE5F3D4318E8730E0020AA49 /* WDSSidePanelController.m in Sources */,
+				FE5F3D4718E8730E0020AA49 /* WDSDetailViewController.m in Sources */,
+				FE5F3D2718E872BE0020AA49 /* WeChatManager.m in Sources */,
+				FE5F3D4118E8730E0020AA49 /* WDSMenuPanelTableViewController.m in Sources */,
+				FE99A32518E884CC008C61FF /* main.m in Sources */,
+				FE5F3D4D18E8730E0020AA49 /* WDSShareDreamViewController.m in Sources */,
+				FE5F3D4918E8730E0020AA49 /* WDSCollectionViewController.m in Sources */,
+				FE5F3D6618E873770020AA49 /* WDSDream.m in Sources */,
+				FE5F3D0518E872020020AA49 /* WDSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE5F3D0818E872020020AA49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE5F3D2A18E872BE0020AA49 /* WDSHelperIndexedList.m in Sources */,
+				FE5F3D4A18E8730E0020AA49 /* WDSCollectionViewController.m in Sources */,
+				FE5F3D4C18E8730E0020AA49 /* WDSAddDreamViewController.m in Sources */,
+				FE5F3D4818E8730E0020AA49 /* WDSDetailViewController.m in Sources */,
+				FE5F3D4418E8730E0020AA49 /* WDSSidePanelController.m in Sources */,
+				FE5F3D5618E873460020AA49 /* JASidePanelController.m in Sources */,
+				FE5F3D1A18E872020020AA49 /* WeDreamTests.m in Sources */,
+				FE5F3D4618E8730E0020AA49 /* WDSMasterViewController.m in Sources */,
+				FE5F3D4218E8730E0020AA49 /* WDSMenuPanelTableViewController.m in Sources */,
+				FE5F3D5818E873460020AA49 /* UIViewController+JASidePanel.m in Sources */,
+				FE5F3D6718E873770020AA49 /* WDSDream.m in Sources */,
+				FE5F3D2818E872BE0020AA49 /* WeChatManager.m in Sources */,
+				FE5F3D6518E873770020AA49 /* WDSFriend.m in Sources */,
+				FE5F3D4E18E8730E0020AA49 /* WDSShareDreamViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE5F3D1218E872020020AA49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE5F3CF018E872020020AA49 /* WeDream */;
+			targetProxy = FE5F3D1118E872020020AA49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE5F3D1618E872020020AA49 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE5F3D1718E872020020AA49 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE5F3D1B18E872020020AA49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE5F3D1C18E872020020AA49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE5F3D1E18E872020020AA49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeDream/WeDream-Prefix.pch";
+				INFOPLIST_FILE = "WeDream/WeDream-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WeDream",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FE5F3D1F18E872020020AA49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeDream/WeDream-Prefix.pch";
+				INFOPLIST_FILE = "WeDream/WeDream-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WeDream",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FE5F3D2118E872020020AA49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WeDream.app/WeDream";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeDream/WeDream-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WeDreamTests/WeDreamTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WeDream",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FE5F3D2218E872020020AA49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WeDream.app/WeDream";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WeDream/WeDream-Prefix.pch";
+				INFOPLIST_FILE = "WeDreamTests/WeDreamTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WeDream",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE5F3CEC18E872020020AA49 /* Build configuration list for PBXProject "WeDream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE5F3D1B18E872020020AA49 /* Debug */,
+				FE5F3D1C18E872020020AA49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE5F3D1D18E872020020AA49 /* Build configuration list for PBXNativeTarget "WeDream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE5F3D1E18E872020020AA49 /* Debug */,
+				FE5F3D1F18E872020020AA49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE5F3D2018E872020020AA49 /* Build configuration list for PBXNativeTarget "WeDreamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE5F3D2118E872020020AA49 /* Debug */,
+				FE5F3D2218E872020020AA49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE5F3CE918E872020020AA49 /* Project object */;
+}

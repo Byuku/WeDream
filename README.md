@@ -5,9 +5,9 @@
 WeDream : an app to share our dreams.
 
 ![](Assets/Logo.png "WeDream LOGO")
-![](Assets/0 "WeDream 1")
-![](Assets/1 "WeDream 2")
-![](Assets/2 "WeDream 3")
+![](Assets/0.png "WeDream 1")
+![](Assets/1.png "WeDream 2")
+![](Assets/2.png "WeDream 3")
 
 ### How to use
 
@@ -25,6 +25,6 @@ WeDream : an app to share our dreams.
 All releases are here : https://github.com/CostardRouge/WeDream/releases
 
 ### Author
-* Steeve POMMIER [Github](https://github.com/CostardRouge) [Twitter](https://twitter.com/LeBlousonRouge)
+* Steeve POMMIER [Github](https://github.com/CostardRouge) / [Twitter](https://twitter.com/LeBlousonRouge)
 * Flavien DI-BELLO [Github](https://github.com/lwinged)
 * Tracy NELCHA [Twitter](https://twitter.com/GlwadysN)

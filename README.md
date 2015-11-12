@@ -22,6 +22,6 @@ WeDream : an app to share our dreams.
 All releases are here : https://github.com/CostardRouge/WeDream/releases
 
 ### Author
-* Steeve POMMIER [Github](https://github.com/CostardRouge) / [Twitter](https://twitter.com/LeBlousonRouge)
+* Steeve POMMIER [Github](https://github.com/CostardRouge) / [Twitter](https://twitter.com/BlousonRouge)
 * Flavien DI-BELLO [Github](https://github.com/lwinged)
 * Tracy NELCHA [Twitter](https://twitter.com/GlwadysN)
